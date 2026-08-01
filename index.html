@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanvin & Sruthi | Wedding Invitation</title>
+    <!-- Google Fonts: Playfair Display for Elegance, Inter for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #041f16;
+            --secondary-bg: #0a2e22;
+            --gold-light: #f5d36b;
+            --gold-dark: #d4af37;
+            --text-light: #f9f6f0;
+            --text-dim: #b3c2bc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, .elegant-text {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(4, 31, 22, 0.4), rgba(4, 31, 22, 0.75)), url('Backgound_Image.jpg') center 22%/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            margin: 0;
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85), 0 0 15px rgba(212, 175, 55, 0.3);
+            letter-spacing: 2px;
+            line-height: 1.15;
+        }
+
+        .heart-symbol {
+            display: inline-block;
+            font-size: 3.5rem;
+            margin: 10px 0;
+            animation: heartBeat 1.8s infinite ease-in-out;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .scroll-btn {
+            margin-top: 40px;
+            padding: 14px 35px;
+            border-radius: 30px;
+            border: 1px solid var(--gold-dark);
+            background: transparent;
+            color: var(--gold-light);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scroll-btn:hover {
+            background: var(--gold-dark);
+            color: var(--primary-bg);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .invite-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .countdown-item {
+            background: rgba(10, 46, 34, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 25px;
+            border-radius: 16px;
+            min-width: 100px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Scratch Card */
+        .scratch-container {
+            margin: 40px auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scratch-card {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--gold-dark);
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scratch-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            text-align: center;
+            z-index: 1;
+            user-select: none;
+        }
+        .scratch-content small {
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+        }
+        #scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        /* Events Section */
+        .events-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: linear-gradient(145deg, rgba(10, 46, 34, 0.8), rgba(4, 31, 22, 0.9));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 50px 30px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .event-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--gold-light);
+        }
+
+        .event-detail {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .event-detail-icon {
+            color: var(--gold-dark);
+            font-size: 1.2rem;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: var(--gold-dark);
+            color: var(--primary-bg);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .map-btn:hover {
+            background: var(--gold-light);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--text-dim);
+        }
+
+        .floral-accent {
+            width: 100px;
+            margin: 20px auto;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grand Double Doors Overlay */
+        #door-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 9999;
+            display: flex;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .door {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            display: flex;
+            align-items: center;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+            position: relative;
+        }
+
+        .door-left {
+            justify-content: flex-end;
+            border-right: 2px solid var(--gold-dark);
+            transform-origin: left;
+        }
+        
+        .door-right {
+            justify-content: flex-start;
+            border-left: 2px solid var(--gold-dark);
+            transform-origin: right;
+        }
+
+        .door-content-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 60px;
+        }
+        .door-content-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 60px;
+        }
+
+        .door-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--gold-light);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .door h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-dim);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        /* The '&' symbol sits centered on the dividing line */
+        .door-ampersand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-style: italic;
+            color: var(--gold-light);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            z-index: 10001;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        /* Wax Seal Coin Button */
+        .door-center-lock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            z-index: 10000;
+        }
+
+        .wax-seal {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #f5d36b, #c8960c 60%, #a07800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 0 0 6px rgba(212, 175, 55, 0.3),
+                0 0 0 12px rgba(212, 175, 55, 0.15),
+                0 8px 30px rgba(0,0,0,0.5);
+            position: relative;
+            animation: seal-pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        .wax-seal::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            top: 0; left: 0;
+        }
+
+        /* Ripple rings */
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            animation: ripple 2s infinite;
+        }
+
+        .seal-monogram {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--primary-bg);
+            font-weight: 700;
+            z-index: 1;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+
+        .seal-you-are {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .seal-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            background: rgba(4, 31, 22, 0.85);
+            padding: 5px 16px;
+            border-radius: 20px;
+            text-shadow: 0 0 10px rgba(212,175,55,0.5);
+            animation: blink-tap 1.5s infinite alternate;
+            white-space: nowrap;
+        }
+
+        @keyframes blink-tap {
+            0%   { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes seal-pulse {
+            0%, 100% { box-shadow: 0 0 0 6px rgba(212,175,55,0.3), 0 0 0 12px rgba(212,175,55,0.15), 0 8px 30px rgba(0,0,0,0.5); }
+            50%  { box-shadow: 0 0 0 10px rgba(212,175,55,0.4), 0 0 0 20px rgba(212,175,55,0.1), 0 8px 30px rgba(0,0,0,0.5); }
+        }
+
+        @keyframes ripple {
+            0%   { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .calendar-wrapper {
+            display: inline-block;
+            background: linear-gradient(145deg, rgba(10,46,34,0.9), rgba(4,31,22,0.95));
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 20px;
+            padding: 20px; /* reduced padding */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            max-width: 320px; /* reduced max width */
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+        }
+
+        .calendar-month {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-light);
+            margin-bottom: 5px;
+        }
+
+        .calendar-year {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            text-align: center;
+        }
+
+        .cal-day-name {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .cal-day {
+            width: 30px; /* reduced size */
+            height: 30px; /* reduced size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.8rem; /* slightly smaller */
+            color: var(--text-dim);
+            margin: 0 auto;
+            transition: all 0.2s ease;
+        }
+
+        .cal-day.empty { visibility: hidden; }
+
+        .cal-day.special {
+            background: radial-gradient(circle at 35% 35%, #f5d36b, #c8960c 60%, #a07800);
+            color: var(--primary-bg);
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 0 0 4px rgba(212,175,55,0.25), 0 0 15px rgba(212,175,55,0.4);
+            flex-direction: column;
+            gap: 0;
+            animation: glow-date 2s infinite alternate;
+        }
+
+        .cal-day.special .heart {
+            font-size: 0.55rem;
+            line-height: 1;
+        }
+
+        @keyframes glow-date {
+            0%   { box-shadow: 0 0 0 4px rgba(212,175,55,0.25), 0 0 15px rgba(212,175,55,0.3); }
+            100% { box-shadow: 0 0 0 8px rgba(212,175,55,0.15), 0 0 25px rgba(212,175,55,0.6); }
+        }
+
+        .cal-save-label {
+            margin-top: 22px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        .save-date-section {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(145deg, rgba(10,46,34,0.9), rgba(4,31,22,0.95));
+            border: 2px solid var(--gold-dark);
+            border-radius: 30px;
+            padding: 20px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-top: 15px;
+        }
+
+        .date-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold-light);
+        }
+
+        .date-heart {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .date-number { font-size: 2.2rem; }
+            .date-heart { font-size: 1.8rem; }
+            .calendar-month { font-size: 1.5rem; }
+            .calendar-year { font-size: 0.75rem; }
+            .cal-day-name { font-size: 0.6rem; }
+            .cal-day { width: 26px; height: 26px; font-size: 0.7rem; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .section-title { font-size: 2.5rem; }
+            .event-card { padding: 40px 20px; }
+            .countdown { gap: 8px; flex-wrap: nowrap; overflow-x: auto; padding: 10px 0; }
+            .countdown-item { padding: 15px 10px; min-width: 65px; flex-shrink: 1; }
+            .countdown-value { font-size: 1.8rem; }
+            .countdown-label { font-size: 0.6rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body class="locked">
+
+    <!-- Grand Double Doors Overlay -->
+    <div id="door-overlay" onclick="openDoors()">
+        <div class="door door-left" id="door-left"></div>
+        <div class="door door-right" id="door-right"></div>
+
+        <!-- Wax Seal Coin — perfectly centered -->
+        <div class="door-center-lock" id="door-lock">
+            <div class="wax-seal">
+                <span class="seal-monogram">D &amp; S</span>
+            </div>
+            <p class="seal-you-are">You are invited</p>
+            <span class="seal-label">Open the Invitation</span>
+            <span class="seal-label">👆 Tap to Open</span>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2 class="elegant-text">We Are Getting Married</h2>
+            <h1>DHANVIN<br><span class="heart-symbol">❤️</span><br>SRUTHI</h1>
+            <button class="scroll-btn" onclick="scrollToInvite()">Open Invitation</button>
+        </div>
+    </div>
+
+    <section id="invite">
+        <h2 class="section-title reveal">Join Us In Celebration</h2>
+        <p class="invite-text reveal">
+            Together with our families, we joyfully invite you to share in our happiness as we unite in marriage. Your presence will make our special day complete.
+        </p>
+
+        <div class="scratch-container reveal">
+            <h3 class="elegant-text" style="font-size: 2rem; margin-bottom: 20px;">Save The Date</h3>
+            <div class="scratch-card">
+                <div class="scratch-content">
+                    13 September 2026
+                </div>
+                <canvas id="scratch-canvas"></canvas>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--gold-light); margin-top: 15px; animation: pulse 2s infinite alternate;">👆 Scratch to reveal the date! 👆</p>
+        </div>
+
+    </section>
+
+    <section id="countdown-section">
+        <h2 class="section-title reveal">Countdown</h2>
+        <p class="invite-text reveal" style="margin-bottom: 20px;">Time left until we say "I do"</p>
+        <div class="countdown reveal">
+            <div class="countdown-item">
+                <div class="countdown-value" id="days">00</div>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="hours">00</div>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="minutes">00</div>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="seconds">00</div>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2 class="section-title reveal">The Wedding Events</h2>
+        <div class="events-container reveal">
+            
+            <!-- Thalikettu Ceremony -->
+            <div class="event-card">
+                <h3 class="event-title">Wedding Ceremony <br><small style="font-size: 1.2rem; font-style: italic; color: #b3c2bc;">(Thalikettu)</small></h3>
+                <div class="event-detail">
+                    <span class="event-detail-icon">📅</span>
+                    Sunday, 13 September 2026<br>
+                    (Chingam 23)
+                </div>
+                <div class="event-detail">
+                    <span class="event-detail-icon">📍</span>
+                    Guruvayoor Sreekrishna Temple, Guruvayoor
+                </div>
+            </div>
+
+            <!-- Wedding Reception -->
+            <div class="event-card">
+                <h3 class="event-title">Wedding Reception</h3>
+                <div class="event-detail">
+                    <span class="event-detail-icon">📅</span>
+                    Sunday, 13 September 2026
+                </div>
+                <div class="event-detail">
+                    <span class="event-detail-icon">⏰</span>
+                    04:30 to 07:30
+                </div>
+                <div class="event-detail">
+                    <span class="event-detail-icon">📍</span>
+                    Valakkavu Church<br>
+                    Kannara Moorkanikara Rd,<br>Thrissur, Kerala 680751
+                </div>
+                <a class="map-btn" href="https://www.google.com/maps/place/Valakkavu+Church/@10.5152271,76.2949882,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba7e54766f2acd3:0xf21965fe8cc2478!8m2!3d10.5152271!4d76.2949882!16s%2Fg%2F1td70fkd!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- September 2026 Calendar -->
+    <section class="calendar-section reveal">
+        <h2 class="section-title">Save The Date</h2>
+        <p class="invite-text" style="margin-bottom: 30px;">Mark your calendar for our special day</p>
+        <div class="calendar-wrapper reveal">
+            <div class="calendar-month">September</div>
+            <div class="calendar-year">2026</div>
+            <div class="calendar-grid">
+                <!-- Day names -->
+                <div class="cal-day-name">Sun</div>
+                <div class="cal-day-name">Mon</div>
+                <div class="cal-day-name">Tue</div>
+                <div class="cal-day-name">Wed</div>
+                <div class="cal-day-name">Thu</div>
+                <div class="cal-day-name">Fri</div>
+                <div class="cal-day-name">Sat</div>
+
+                <!-- Sep 2026: starts on Tuesday (offset 2) -->
+                <div class="cal-day empty"></div>
+                <div class="cal-day empty"></div>
+                <div class="cal-day">1</div>
+                <div class="cal-day">2</div>
+                <div class="cal-day">3</div>
+                <div class="cal-day">4</div>
+                <div class="cal-day">5</div>
+
+                <div class="cal-day">6</div>
+                <div class="cal-day">7</div>
+                <div class="cal-day">8</div>
+                <div class="cal-day">9</div>
+                <div class="cal-day">10</div>
+                <div class="cal-day">11</div>
+                <div class="cal-day">12</div>
+
+                <!-- 13th — Wedding Day! -->
+                <div class="cal-day special">
+                    13
+                    <span class="heart">❤️</span>
+                </div>
+                <div class="cal-day">14</div>
+                <div class="cal-day">15</div>
+                <div class="cal-day">16</div>
+                <div class="cal-day">17</div>
+                <div class="cal-day">18</div>
+                <div class="cal-day">19</div>
+
+                <div class="cal-day">20</div>
+                <div class="cal-day">21</div>
+                <div class="cal-day">22</div>
+                <div class="cal-day">23</div>
+                <div class="cal-day">24</div>
+                <div class="cal-day">25</div>
+                <div class="cal-day">26</div>
+
+                <div class="cal-day">27</div>
+                <div class="cal-day">28</div>
+                <div class="cal-day">29</div>
+                <div class="cal-day">30</div>
+                <div class="cal-day empty"></div>
+                <div class="cal-day empty"></div>
+                <div class="cal-day empty"></div>
+            </div>
+            <div class="cal-save-label">Our Wedding Day <br> Dhanvin & Sruthi ❤️</div>
+        </div>
+    </section>
+
+
+    <footer>
+        <h3 class="elegant-text" style="font-size: 2rem;">D & S</h3>
+        <p>Looking forward to celebrating with you!</p>
+    </footer>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="Backgound_Music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Scroll to invite section
+        function scrollToInvite() {
+            document.getElementById('invite').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Countdown Timer Logic
+        const weddingDate = new Date("2026-09-13T00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Scroll Animation Observer (Reveal elements on scroll)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Grand Doors Logic
+        function openDoors() {
+            const leftDoor = document.getElementById('door-left');
+            const rightDoor = document.getElementById('door-right');
+            const lock = document.getElementById('door-lock');
+            const overlay = document.getElementById('door-overlay');
+            const bgMusic = document.getElementById('bg-music');
+
+            // Play music
+            if (bgMusic) {
+                bgMusic.play().catch(err => console.log("Audio play failed:", err));
+            }
+
+            lock.style.opacity = '0';
+            lock.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            
+            setTimeout(() => {
+                leftDoor.style.transform = 'translateX(-100%)';
+                rightDoor.style.transform = 'translateX(100%)';
+            }, 300);
+            
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.classList.remove('locked');
+            }, 1800);
+        }
+
+        // Scratch Card Logic
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        function initCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Fill with gold gradient
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#f5d36b');
+            gradient.addColorStop(0.5, '#d4af37');
+            gradient.addColorStop(1, '#f5d36b');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add some text on top
+            ctx.fillStyle = '#041f16';
+            ctx.font = 'bold 22px "Inter", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SCRATCH HERE', canvas.width/2, canvas.height/2);
+        }
+
+        function getMousePos(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function scratch(e) {
+            if (!isDrawing) return;
+            if (e.cancelable) e.preventDefault(); // Prevent scrolling on mobile while scratching
+            const pos = getMousePos(e);
+            
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, 25, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+        canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); }, {passive: false});
+        
+        window.addEventListener('mouseup', () => { isDrawing = false; });
+        window.addEventListener('touchend', () => { isDrawing = false; });
+        
+        canvas.addEventListener('mousemove', scratch);
+        canvas.addEventListener('touchmove', scratch, {passive: false});
+
+        window.addEventListener('load', initCanvas);
+        // Ensure it draws correctly if window size changes
+        window.addEventListener('resize', () => {
+            if (canvas.width !== canvas.offsetWidth) initCanvas();
+        });
+    </script>
+</body>
+</html>
